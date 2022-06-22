@@ -1,0 +1,46 @@
+para subir a nuestros repositorios:
+ 
+
+1. creamos una carpeta que se va a llamar .GITIGNORE
+
+   en la carpeta .GITIGNORE va todo lo que no necesitamos/ignoramos que se suba al repositorio
+
+
+2. vamos a dar nuestras credenciales de git a nuestro proyecto esto solo se realiza una vez por equipo. 
+  
+   ubicados en la carpeta (proyecto) escribimos en la terminal (git config --global user.name "Jefferson")
+
+
+3. cambiamos en user.name por user.email esto tambien lo realizamos una vez por equipo
+    
+   (ingresamos nuestro correo que creamos en gitup) (git config --global user.email "jeffersonbecerra335@gmail.com")
+
+
+4. vamos a crear el espacio en la nuve para crear el proyecto. esto es por proyecto 
+
+   ingresamos a githup y le damos en (crear repositorio)
+
+
+4.1 luego le damos en crear repositorio y copiamos
+
+   (git remote add origin https://github.com/yefry25/adsi-proyecto-prueba.git) -- esto es nuestra dirección en donde encontraremos el repositorio
+ 
+
+5. en visual le damos (git init) esto monitoriara todo nuestro proyecto
+
+
+6. (git add .) va a barrer y todo lo que este desactualizado en el repositorio lo va a disponer para ser actualizado
+
+
+7. con (git status) este es opcional para observar si todo lo que vamos a subir esta correcto 
+
+
+8. (git commit -m "primer commit") va a sacar como una fotografia de todos los cambios implementados 
+   
+   el -m es un mensaje y le escribimos lo que requerimos " el mensaje que queremos que vaya"
+
+
+9. copiamos la linea del punto (4.1) 
+
+10.por ultimo (git push -u origin master) para subir al repositorio el proyecto, conectando a git con github
+  

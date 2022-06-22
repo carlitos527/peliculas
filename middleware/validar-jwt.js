@@ -1,0 +1,29 @@
+import jwt from "jsonwebtoken"
+import Usuario from "../models/usuario.js";
+
+const generarJWT = (uid) => {
+    return new Promise((resolve, reject) => {
+        const payload = { uid };
+        jwt.sign(payload, process.env.SECRETORPRIVATEKEY, {
+            expiresIn: "4h"//4h
+        }, (err, token) => {
+            if (err) {
+                console.log(err);
+                reject("No se pudo generar el token")
+            } else {
+                resolve(token)
+            }
+        })
+    })
+
+}
+
+const validarJWT = async (req, res, next) => {
+    const token = req.header("x-token");
+
+    if (!token) {
+        return res.status(401).json({
+            msg: "No hay token en la peticion"
+        })
+    }
+}
