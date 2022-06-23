@@ -6,6 +6,7 @@ import pelicula from "../routes/pelicula.js"
 import actor from "../routes/actor.js"
 import Favorito from "../routes/favoritos.js"
 import Persona from "../routes/persona.js"
+import fileUpload from "express-fileUpload"
 
 class Server {
     constructor() {
@@ -28,6 +29,11 @@ class Server {
     middlewares() {
         this.app.use(express.json())
         this.app.use(cors())
+        this.app.use(fileUpload({
+            useTempFiles:true,
+            tempFileDir:'/tmp/',
+            createParentPath:true
+        }));
     }
 
     async conectarBd(){

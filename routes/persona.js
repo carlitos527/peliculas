@@ -1,12 +1,15 @@
 import {Router} from "express"
 import { personaGet, personaGetLogin, personaPost, personaDelete } from "../controllers/persona.js"
+import validarJWT from "../middleware/validar-jwt.js"
 const router= new Router()       //conc¿exion de rutas
 
 router.get('/', personaGet)
 
 
 
-router.get('/login', personaGetLogin ) 
+router.get('/login', [
+    validarJWT
+],personaGetLogin ) 
 
 //router.put ('/modificar',personaPut)
     

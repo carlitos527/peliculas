@@ -2,6 +2,8 @@ import bcryptjs from "bcryptjs";
 
 import Persona from "../models/persona.js";
 
+import { generarJWT } from "../middleware/validar-jwt.js";
+
 const personaGet= async(req, res)=>{
     const peliculas = await Persona
         .find()// buscar todo lo que tenga en persona...
